@@ -6,7 +6,65 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/PlexSheep/sheeve)
 [![Rust CI](https://github.com/PlexSheep/sheeve/actions/workflows/cargo.yaml/badge.svg)](https://github.com/PlexSheep/hedu/actions/workflows/cargo.yaml)
 
-Generates sheep related names for eve online ships
+Manages names for eve online ships.
+
+```
+$ sheeve -h
+Usage: sheeve [options]
+Store: /home/plex/.local/share/sheeve.msgpack
+
+Options:
+    -o NAME             set output file name
+    -c, --custom CUSTOM_NAME
+                        use a custom non-default name
+    -h, --help          print this help menu
+    -l, --list          list all names and their counters
+    -d, --default NEW_DEFAULT
+                        set a new default name that is not 'sheep'
+    -r, --remove BAD_NAME
+                        remove a name from the store
+    -s, --set NAME      set counter for a custom name
+$ sheeve
+sheep0
+$ sheeve
+sheep1
+$ sheeve
+sheep2
+$ sheeve -l
+Name                                     | Counter
+=====================================================
+sheep(d)                                 | 2
+=====================================================
+1 names                                  | 2 total
+$ sheeve -c ape
+ape0
+$ sheeve -l
+Name                                     | Counter
+=====================================================
+ape                                      | 1
+sheep(d)                                 | 2
+=====================================================
+1 names                                  | 2 total
+$ sheeve -c ape -s 40
+$ sheeve -c sheep -s 40
+$ sheeve -l
+Name                                     | Counter
+=====================================================
+ape(d)                                   | 40
+sheep                                    | 40
+=====================================================
+2 names                                  | 80 total
+$ sheeve -g afs
+afs is at 0
+$ sheeve -r ape
+ape (40) was removed
+$ sheeve -l
+Name                                     | Counter
+=====================================================
+sheep                                    | 40
+=====================================================
+1 names                                  | 40 total
+```
 
 - [GitHub](https://github.com/PlexSheep/sheeve)
 - [crates.io](https://crates.io/crates/sheeve)
