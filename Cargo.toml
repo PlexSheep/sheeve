@@ -1,6 +1,6 @@
 [package]
 name = "sheeve"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 publish = true
 authors = ["Christoph J. Scherr <software@cscherr.de>"]
