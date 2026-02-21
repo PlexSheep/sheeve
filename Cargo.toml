@@ -1,15 +1,21 @@
 [package]
-name = "base"
+name = "sheeve"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 publish = false
 authors = ["Christoph J. Scherr <software@cscherr.de>"]
 license = "GPL-3.0-or-later"
-description = "No description yet"
+description = "Generates sheep related names for eve online ships"
 readme = "README.md"
-homepage = "https://github.com/PlexSheep/rs-base"
-repository = "https://github.com/PlexSheep/rs-base"
-keywords = ["template"]
+homepage = "https://github.com/PlexSheep/sheeve"
+repository = "https://github.com/PlexSheep/sheeve"
+keywords = ["cli", "stupid", "name-generator"]
 
 
 [dependencies]
+clap = { version = "4.5.60", features = ["derive"] }
+etcetera = "0.11.0"
+getopts = "0.2.24"
+rand = "0.10.0"
+rmp-serde = "1.3.1"
+serde = { version = "1.0.228", features = ["derive"] }
