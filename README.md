@@ -6,7 +6,14 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/PlexSheep/sheeve)
 [![Rust CI](https://github.com/PlexSheep/sheeve/actions/workflows/cargo.yaml/badge.svg)](https://github.com/PlexSheep/hedu/actions/workflows/cargo.yaml)
 
-Manages names for eve online ships.
+- [GitHub](https://github.com/PlexSheep/sheeve)
+- [crates.io](https://crates.io/crates/sheeve)
+
+Keeps tab of things that increment.
+
+In my case, it manages names for eve online ships.
+
+---
 
 ```
 $ sheeve -h
@@ -65,7 +72,3 @@ sheep                                    | 40
 =====================================================
 1 names                                  | 40 total
 ```
-
-- [GitHub](https://github.com/PlexSheep/sheeve)
-- [crates.io](https://crates.io/crates/sheeve)
-- [docs.rs](https://docs.rs/crate/sheeve/)

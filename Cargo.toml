@@ -2,14 +2,14 @@
 name = "sheeve"
 version = "0.1.0"
 edition = "2024"
-publish = false
+publish = true
 authors = ["Christoph J. Scherr <software@cscherr.de>"]
 license = "GPL-3.0-or-later"
-description = "Generates sheep related names for eve online ships"
+description = "Keeps tab of things that increment"
 readme = "README.md"
 homepage = "https://github.com/PlexSheep/sheeve"
 repository = "https://github.com/PlexSheep/sheeve"
-keywords = ["cli", "stupid", "name-generator"]
+keywords = ["cli", "numbers", "tracking"]
 
 
 [dependencies]
