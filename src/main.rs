@@ -8,9 +8,11 @@ mod store;
 
 fn print_usage(program: &str, opts: Options) {
     let brief = format!(
-        "Usage: {} [options]\nStore: {}",
+        "Usage: {} [options]\nStore: {}\n{} v{}",
         program,
-        store::get_path_of_store_file().to_string_lossy()
+        store::get_path_of_store_file().to_string_lossy(),
+        env!("CARGO_PKG_NAME"),
+        env!("CARGO_PKG_VERSION")
     );
     print!("{}", opts.usage(&brief));
 }

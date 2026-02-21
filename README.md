@@ -17,8 +17,9 @@ In my case, it manages names for eve online ships.
 
 ```
 $ sheeve -h
-Usage: sheeve [options]
+Usage: target/debug/sheeve [options]
 Store: /home/plex/.local/share/sheeve.msgpack
+sheeve v0.1.0
 
 Options:
     -o NAME             set output file name
@@ -30,6 +31,7 @@ Options:
                         set a new default name that is not 'sheep'
     -r, --remove BAD_NAME
                         remove a name from the store
+    -g, --get NAME      get next counter for a name without incrementing it
     -s, --set NAME      set counter for a custom name
 $ sheeve
 sheep0
