@@ -69,6 +69,14 @@ impl Store {
         self.name_counters.entry(key.to_owned()).or_insert(0)
     }
 
+    pub fn get_number_for_key(&mut self, key: &Name) -> u32 {
+        if !self.name_counters.contains_key(key) {
+            0
+        } else {
+            *(self.get_mut_entry(key))
+        }
+    }
+
     pub fn take_number_for_key(&mut self, key: &Name) -> u32 {
         // not using the entry api because that requires that we own Name, which could be a longer
         // string
@@ -89,5 +97,9 @@ impl Store {
 
     pub fn name_counters(&self) -> &HashMap<Name, u32> {
         &self.name_counters
+    }
+
+    pub fn remove_name(&mut self, name: &str) {
+        self.name_counters.remove(name);
     }
 }

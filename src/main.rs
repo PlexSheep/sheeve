@@ -35,6 +35,13 @@ fn main() {
         "set a new default name that is not 'sheep'",
         "NEW_DEFAULT",
     );
+    opts.optopt("r", "remove", "remove a name from the store", "BAD_NAME");
+    opts.optopt(
+        "g",
+        "get",
+        "get next counter for a name without incrementing it",
+        "NAME",
+    );
     opts.optopt("s", "set", "set counter for a custom name", "NAME");
     let matches = match opts.parse(&args[1..]) {
         Ok(m) => m,
@@ -65,6 +72,10 @@ fn main() {
         set_default(&mut store, &value);
     } else if matches.opt_present("list") {
         show_list(&mut store)
+    } else if let Some(value) = matches.opt_str("remove") {
+        remove_name(&mut store, &value);
+    } else if let Some(value) = matches.opt_str("get") {
+        get_name(&mut store, &value);
     } else if let Some(n_value) = matches.opt_str("set") {
         if let Some(value) = matches.opt_str("custom") {
             let number = match n_value.parse() {
@@ -99,6 +110,18 @@ fn main() {
             exit(3)
         }
     }
+}
+
+fn get_name(store: &mut Store, name: &Name) {
+    let count = store.get_number_for_key(name);
+    println!("{name} is at {count}")
+}
+
+fn remove_name(store: &mut Store, name: &Name) {
+    let count = store.get_number_for_key(name);
+    store.remove_name(name);
+    assert!(!store.name_counters().contains_key(name));
+    println!("{name} ({count}) was removed")
 }
 
 fn show_list(store: &mut Store) {
