@@ -53,7 +53,7 @@ Name                                     | Counter
 ape                                      | 1
 sheep(d)                                 | 2
 =====================================================
-1 names                                  | 2 total
+1 names                                  | 3 total
 $ sheeve -c ape -s 40
 $ sheeve -c sheep -s 40
 $ sheeve -l
